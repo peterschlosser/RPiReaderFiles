@@ -1,0 +1,1 @@
+www-data ALL=(pi) NOPASSWD: /var/www/html/bin/reader-control.sh
