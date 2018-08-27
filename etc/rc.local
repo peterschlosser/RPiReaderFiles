@@ -17,4 +17,10 @@ if [ "$_IP" ]; then
   printf "My IP address is %s\n" "$_IP"
 fi
 
+# background a sleep 60 then begin device reader (as user pi)
+CMD_READER=/var/www/html/bin/reader-control.sh
+if [ -f "${CMD_READER}" ]; then
+  ( sleep 60 && /usr/bin/sudo -u pi $CMD_READER start ) &
+fi
+
 exit 0
