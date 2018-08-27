@@ -8,7 +8,10 @@ Environment=APACHE_STARTED_BY_SYSTEMD=true
 ExecStart=/usr/sbin/apachectl start
 ExecStop=/usr/sbin/apachectl stop
 ExecReload=/usr/sbin/apachectl graceful
-PrivateTmp=true
+# 20180826 pschlosser
+# disable "systemd /tmp isolation"
+#PrivateTmp=true
+PrivateTmp=false
 Restart=on-abort
 
 [Install]
